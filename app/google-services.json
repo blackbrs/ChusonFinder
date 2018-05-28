@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "191692868219",
+    "firebase_url": "https://chusonfinder.firebaseio.com",
+    "project_id": "chusonfinder",
+    "storage_bucket": "chusonfinder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191692868219:android:32b98c5873852384",
+        "android_client_info": {
+          "package_name": "grupo14.chusonfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191692868219-apakt7garoh5uduuv836jlm9p48c4epb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "grupo14.chusonfinder",
+            "certificate_hash": "b293ffecc5a93224de9be9ddffef96c7a27b7825"
+          }
+        },
+        {
+          "client_id": "191692868219-20t6csfkd4a11ga2s86ht2m6tq9l4k6j.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "191692868219-20t6csfkd4a11ga2s86ht2m6tq9l4k6j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8SfrwHF5X2-fXRRbplnd0JZHaqF8yFIQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191692868219-20t6csfkd4a11ga2s86ht2m6tq9l4k6j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
