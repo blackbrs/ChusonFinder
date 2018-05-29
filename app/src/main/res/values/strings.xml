@@ -6,5 +6,11 @@
     <string name="error_login">Error al iniciar sesion</string>
     <string name="firebase_error_login">Error en el inicio</string>
     <string name="title_activity_user_maps">Map</string>
+    <string name="title_activity_pantalla_usuario">PantallaUsuarioActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 
 </resources>
