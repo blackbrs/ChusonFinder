@@ -21,12 +21,12 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class UserMapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
-
+//VARIRABLE DE GOOGLE MAPS PARA LA LOCALIZACION
     private GoogleMap mMap;
     GoogleApiClient nGoogleApiClient;
     Location nLastLocation;
     LocationRequest nLocationRequest;
-
+    ////////////////////////////////////////////////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +36,7 @@ public class UserMapsActivity extends FragmentActivity implements OnMapReadyCall
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
-
+////////////////////////////// Funciones de maps////////////////////////////////////////////
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;

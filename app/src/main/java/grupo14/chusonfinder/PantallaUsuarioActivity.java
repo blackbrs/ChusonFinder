@@ -32,21 +32,22 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class PantallaUsuarioActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
-
+/////////////////////////VARIABLES PARA GOOGLE MAPS API///////////////////////////////
     private GoogleMap mMap;
     GoogleApiClient nGoogleApiClient;
     Location nLastLocation;
     LocationRequest nLocationRequest;
+    /////////////////////////////////////////////////////////////////////////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_usuario);
-
+////////////////////???????????EL SETEADOR DEL MAP EN LA LAYOUT//////////////////////////////////////////
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -125,7 +126,7 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         return true;
     }
 
-
+/////////////////////////////////////// FUNCIONES DE GOOGLE MAPS///////////////////////////////////////////////
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
