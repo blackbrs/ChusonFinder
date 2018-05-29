@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AdministradorLoginActivity"></activity>
+        <activity android:name=".AdministradorLoginActivity" />
+        <activity android:name=".AdminMenuActivity" />
+        <activity android:name=".UsuarioLoginActivity"></activity>
     </application>
 
 </manifest>

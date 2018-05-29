@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="150dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="grupo14.chusonfinder.UsuarioLoginActivity">
+
+    <EditText
+        android:id="@+id/editCorreo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Correo Electronico"/>
+    <EditText
+        android:id="@+id/editContra"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Contraseña"/>
+
+    <Button
+        android:paddingTop="10dp"
+        android:id="@+id/login"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Login" />
+    <Button
+        android:paddingTop="10dp"
+        android:id="@+id/Regis"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Registrarse" />
+
+</LinearLayout>
