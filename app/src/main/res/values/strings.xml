@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ChusonFinder</string>
+    <string name="facebook_app_id">379640879193219</string>
+    <string name="fb_login_protocol_scheme">fb379640879193219</string>
+    <string name="cancel_login">Cancelo el inicio</string>
+    <string name="error_login">Error al iniciar sesion</string>
+    <string name="firebase_error_login">Error en el inicio</string>
+
 </resources>
