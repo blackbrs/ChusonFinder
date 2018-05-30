@@ -1,5 +1,6 @@
 package grupo14.chusonfinder;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -37,6 +38,8 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
     GoogleApiClient nGoogleApiClient;
     Location nLastLocation;
     LocationRequest nLocationRequest;
+
+
     /////////////////////////////////////////////////////////////////////////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +100,7 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -122,6 +125,8 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 
 /////////////////////////////////////// FUNCIONES DE GOOGLE MAPS///////////////////////////////////////////////
     @Override
