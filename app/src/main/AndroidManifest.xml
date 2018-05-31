@@ -47,9 +47,6 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".UserMapsActivity"
-            android:label="@string/title_activity_user_maps" />
-        <activity
             android:name=".PantallaUsuarioActivity"
             android:label="@string/title_activity_pantalla_usuario"
             android:theme="@style/AppTheme.NoActionBar" />
