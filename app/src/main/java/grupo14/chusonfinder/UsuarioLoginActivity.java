@@ -78,7 +78,7 @@ public class UsuarioLoginActivity extends AppCompatActivity {
 
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(!task.isSuccessful()){
-                            Toast.makeText(UsuarioLoginActivity.this, "ERROR DE REGISTRO",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UsuarioLoginActivity.this, "ERROR DE REGISTRO, EL PASSWORD TIENE QUE SER DE 6 CARACTERES MINIMO",Toast.LENGTH_SHORT).show();
                         }else{
                             String user_id = nAuth.getCurrentUser().getUid();
                             DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("usuarios").child("usern").child(user_id);
@@ -99,14 +99,14 @@ public class UsuarioLoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(!task.isSuccessful()){
-                            Toast.makeText(UsuarioLoginActivity.this, "ERROR DE INICIO DESESION",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UsuarioLoginActivity.this, "ERROR DE INICIO DE SESION",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
 
             }
         });
-
+///////////////////////////////////////////////// INICIO DE SESION DE FACEBOOK/////////////////////////////////////////////////////////////////////////////////
         callbackManager = CallbackManager.Factory.create();
         loginButton = (LoginButton)findViewById(R.id.login_button);
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {

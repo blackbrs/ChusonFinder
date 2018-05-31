@@ -21,6 +21,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.facebook.login.LoginManager;
+import com.firebase.geofire.GeoFire;
+import com.firebase.geofire.GeoLocation;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
@@ -31,6 +33,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class PantallaUsuarioActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
 /////////////////////////VARIABLES PARA GOOGLE MAPS API///////////////////////////////
@@ -100,7 +104,7 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-
+                onClick();
         }
 
         return super.onOptionsItemSelected(item);
@@ -155,10 +159,8 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         nLastLocation = location;
 
         LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
-
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(17));
-
     }
 
 
@@ -171,7 +173,6 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         nLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
             return;
         }
         LocationServices.FusedLocationApi.requestLocationUpdates(nGoogleApiClient, nLocationRequest, this);
@@ -187,6 +188,8 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
 
     }
 
+
+
     private void goMainScreen(){
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -198,4 +201,13 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         LoginManager.getInstance().logOut();
         goMainScreen();
     }
+
+
+    public  void onClick(){
+
+        Intent intent = new Intent(PantallaUsuarioActivity.this, DatosPersonalesActivity.class);
+        startActivity(intent);
+
+    }
+
 }

@@ -53,6 +53,7 @@
             android:name=".PantallaUsuarioActivity"
             android:label="@string/title_activity_pantalla_usuario"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DatosPersonalesActivity"></activity>
     </application>
 
 </manifest>
