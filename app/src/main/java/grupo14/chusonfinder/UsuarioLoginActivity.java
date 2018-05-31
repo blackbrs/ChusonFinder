@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
@@ -37,6 +38,7 @@ public class UsuarioLoginActivity extends AppCompatActivity {
     private FirebaseAuth nAuth;
     private FirebaseAuth.AuthStateListener firebaseAutListener;
 
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,7 @@ public class UsuarioLoginActivity extends AppCompatActivity {
 
         correo = (EditText)findViewById(R.id.editCorreo);
         contra = (EditText)findViewById(R.id.editContra);
+        progressBar = (ProgressBar)findViewById(R.id.progress_bar);
 
         regis.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,6 +133,9 @@ public class UsuarioLoginActivity extends AppCompatActivity {
     }
 
     private void handleFacebookAccesToken(AccessToken accessToken) {
+        progressBar.setVisibility(View.VISIBLE);
+
+
         AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
         nAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -137,6 +143,7 @@ public class UsuarioLoginActivity extends AppCompatActivity {
                 if(!task.isSuccessful()){
                     Toast.makeText(getApplicationContext(),R.string.firebase_error_login,Toast.LENGTH_LONG).show();
                 }
+                progressBar.setVisibility(View.GONE);
 
             }
         });
