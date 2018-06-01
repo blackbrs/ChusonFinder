@@ -169,6 +169,6 @@ public class UsuarioLoginActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        nAuth.removeAuthStateListener(firebaseAutListener);
+       nAuth.removeAuthStateListener(firebaseAutListener);
     }
 }
