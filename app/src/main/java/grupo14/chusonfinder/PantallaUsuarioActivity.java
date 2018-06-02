@@ -1,5 +1,6 @@
 package grupo14.chusonfinder;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.ClipData;
 
@@ -15,11 +16,13 @@ import android.graphics.Color;
 import android.graphics.Path;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -226,7 +229,8 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         int id = item.getItemId();
 
         if (id == R.id.Blog) {
-
+            Intent intent = new Intent(PantallaUsuarioActivity.this, BlogActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_manage) {
 
@@ -248,9 +252,8 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-
         buildGoogleApiClient();
-       // mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+      //  mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mMap.setMyLocationEnabled(true);
 
     }
@@ -269,7 +272,6 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
     @Override
     public void onLocationChanged(Location location) {
         nLastLocation = location;
-
         LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
         //mMap.setTrafficEnabled(true);
        // mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
