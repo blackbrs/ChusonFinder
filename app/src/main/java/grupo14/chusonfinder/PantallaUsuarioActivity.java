@@ -256,6 +256,8 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
       //  mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mMap.setMyLocationEnabled(true);
 
+
+
     }
 
 
