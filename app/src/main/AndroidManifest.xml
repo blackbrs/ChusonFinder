@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="grupo14.chusonfinder">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -50,7 +51,8 @@
             android:label="@string/title_activity_pantalla_usuario"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DatosPersonalesActivity" />
-        <activity android:name=".BlogActivity"></activity>
+        <activity android:name=".BlogActivity" />
+        <activity android:name=".PostActivity"></activity>
     </application>
 
 </manifest>
