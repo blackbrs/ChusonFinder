@@ -7,7 +7,7 @@
     tools:context="grupo14.chusonfinder.PostActivity">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageSelected"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -18,12 +18,12 @@
         android:src="@mipmap/add_btn" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/titleField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/input_outline"
         android:hint="Titulo del Post.."
-        android:layout_below="@+id/imageButton"
+        android:layout_below="@+id/imageSelected"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -32,13 +32,13 @@
         android:paddingVertical="10dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/descField"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:background="@drawable/input_outline"
         android:ems="10"
         android:hint="Descripcion del Post..."
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/titleField"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -47,14 +47,14 @@
         android:paddingVertical="10dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/submitBtn"
         android:layout_width="383dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="Enviar Post"
-        android:textColor="@color/cardview_light_background"
+        android:layout_below="@+id/descField"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="40dp"
-        android:layout_below="@+id/editText2" />
+        android:background="@color/colorPrimary"
+        android:text="Enviar Post"
+        android:textColor="@color/cardview_light_background" />
 </RelativeLayout>
