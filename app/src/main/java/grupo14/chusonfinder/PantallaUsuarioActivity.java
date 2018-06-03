@@ -235,7 +235,9 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
             startActivity(intent);
 
         } else if (id == R.id.nav_manage) {
-
+        } else if (id == R.id.nav_nos) {
+        } else if (id == R.id.Route53) {
+           ruta53();
         } else if (id == R.id.cerrar) {
             Logout();
         }
@@ -328,6 +330,36 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
     }
 /////////////////////////////////////////////////////// ASIGANANDO RUTAS/////////////////////////////////////////////////////
     public void ruta53(){
+         LatLng Punto1 = new LatLng(13.742818, -89.221449);
+         LatLng Punto2 = new LatLng(13.739358, -89.217147);
+         LatLng Punto3 = new LatLng(13.738556, -89.212995);
+         LatLng Punto4 = new LatLng(13.737165, -89.210720);
+         LatLng Punto5 = new LatLng(13.736081, -89.207947);
+         LatLng Punto6 = new LatLng(13.733236, -89.206198);
+         LatLng Punto7 = new LatLng(13.732447, -89.204691);
+         LatLng Punto8 = new LatLng(13.729940, -89.202344);
+         LatLng Punto9 = new LatLng(13.727228, -89.202186);
+         LatLng Punto10 = new LatLng(13.721014, -89.204031);
+         LatLng Punto11 = new LatLng(13.718630, -89.205911);
+         LatLng Punto12 = new LatLng(13.715667, -89.210503);
+
+
+
+            mMap.addMarker(new MarkerOptions().position(Punto1).title("Punto de salida ruta 53"));
+            mMap.addMarker(new MarkerOptions().position(Punto2).title("Parada Mister Pan"));
+            mMap.addMarker(new MarkerOptions().position(Punto3).title("Parada Col San Pedro"));
+            mMap.addMarker(new MarkerOptions().position(Punto4).title("Parada Villa Olimpica"));
+            mMap.addMarker(new MarkerOptions().position(Punto5).title("Parada Calle El Bambu"));
+            mMap.addMarker(new MarkerOptions().position(Punto6).title("Parada Calle al Volcan"));
+            mMap.addMarker(new MarkerOptions().position(Punto7).title("Unidad De Salud zacamil"));
+            mMap.addMarker(new MarkerOptions().position(Punto8).title("Parada Los 400"));
+            mMap.addMarker(new MarkerOptions().position(Punto9).title("Parada Comerciales zacamil"));
+            mMap.addMarker(new MarkerOptions().position(Punto10).title("Parada Polideportivo UES"));
+            mMap.addMarker(new MarkerOptions().position(Punto11).title("Parada Oficinas Anda"));
+            mMap.addMarker(new MarkerOptions().position(Punto12).title("Parada Colegio Cristobsl Colon"));
+
+
+
 
 
     }
