@@ -1,5 +1,6 @@
 package grupo14.chusonfinder;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
@@ -14,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseListAdapter;
@@ -22,6 +24,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -45,8 +48,6 @@ public class BlogActivity extends AppCompatActivity {
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Blog, BlogViewHolder>(options) {
             @Override
             public BlogViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-                // Create a new instance of the ViewHolder, in this case we are using a custom
-                // layout called R.layout.message for each item
                 View view = LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.blog_row, parent, false);
                 return new BlogViewHolder(view);
@@ -56,6 +57,7 @@ public class BlogActivity extends AppCompatActivity {
             protected void onBindViewHolder(BlogViewHolder holder, int position, Blog model) {
                 holder.setTitle(model.getTitle());
                 holder.setDesc(model.getDesc());
+                holder.setImage(getApplicationContext(),model.getImage());
             }
         };
         mBlogList.setAdapter(firebaseRecyclerAdapter);
@@ -83,6 +85,10 @@ public class BlogActivity extends AppCompatActivity {
         public void setDesc(String desc){
             TextView post_desc = (TextView) mView.findViewById(R.id.post_desc);
             post_desc.setText(desc);
+        }
+        public void setImage(Context ctx, String image){
+            ImageView post_image= (ImageView) mView.findViewById(R.id.post_image);
+            Picasso.with(ctx).load(image).resize(50,50).centerCrop().into(post_image);
         }
     }
     @Override
