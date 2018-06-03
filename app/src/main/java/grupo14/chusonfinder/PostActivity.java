@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -26,6 +28,7 @@ public class PostActivity extends AppCompatActivity {
     private Uri mImageUri=null;
     private StorageReference mStorage;
     private ProgressDialog mProgress;
+    private DatabaseReference mDatabase;
 
 
     @Override
@@ -39,6 +42,7 @@ public class PostActivity extends AppCompatActivity {
         mSubmitBtn = (Button) findViewById(R.id.submitBtn);
         mStorage = FirebaseStorage.getInstance().getReference();
         mProgress = new ProgressDialog(this);
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Blog");
         mSelectedImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,16 +62,21 @@ public class PostActivity extends AppCompatActivity {
 
     private void startPosting() {
         mProgress.setMessage("Posting to Blog...");
+        mProgress.setCancelable(false);
         mProgress.show();
-        String title_val=mPostTitle.getText().toString().trim();
-        String desc_val=mPostDesc.getText().toString().trim();
+        final String title_val=mPostTitle.getText().toString().trim();
+        final String desc_val=mPostDesc.getText().toString().trim();
         if(!TextUtils.isEmpty(title_val)&& !TextUtils.isEmpty(desc_val)&& mImageUri!=null){
-            StorageReference filepath= mStorage.child("Blog_Images").child(mImageUri.getLastPathSegment());
+            final StorageReference filepath= mStorage.child("Blog_Images").child(mImageUri.getLastPathSegment());
             filepath.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Uri downloadUrl = taskSnapshot.getStorage().getDownloadUrl().getResult();
                     mProgress.dismiss();
+                    DatabaseReference newPost = mDatabase.push();
+                    newPost.child("title").setValue(title_val);
+                    newPost.child("desc").setValue(desc_val);
+                    newPost.child("image").setValue(filepath.getDownloadUrl().toString());
+                    startActivity(new Intent(PostActivity.this,BlogActivity.class));
                 }
             });
         }
