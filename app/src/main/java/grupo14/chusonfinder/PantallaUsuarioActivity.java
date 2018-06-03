@@ -88,14 +88,15 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-     //   FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-       // fab.setOnClickListener(new View.OnClickListener() {
-         //   @Override
-           // public void onClick(View view) {
-             //   Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-              //          .setAction("Action", null).show();
-            //}
-        //});
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Mapa Limpio", Snackbar.LENGTH_LONG);
+                limpiar();
+                mMap.setTrafficEnabled(false);
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -234,10 +235,20 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
             Intent intent = new Intent(PantallaUsuarioActivity.this, BlogActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_manage) {
-        } else if (id == R.id.nav_nos) {
+        } else if (id == R.id.seguras) {
+        } else if (id == R.id.inseguras) {
         } else if (id == R.id.Route53) {
            ruta53();
+        } else if (id == R.id.Route1) {
+        } else if (id == R.id.Route44) {
+        } else if (id == R.id.Trafico) {
+            mMap.setTrafficEnabled(true);
+        } else if (id == R.id.Satilital) {
+            mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        } else if (id == R.id.Hybrido) {
+            mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        } else if (id == R.id.Normal) {
+            mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         } else if (id == R.id.cerrar) {
             Logout();
         }
@@ -346,10 +357,10 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
          LatLng Punto14 = new LatLng(13.715220, -89.204379);
          LatLng Punto15 = new LatLng(13.714001, -89.203585);
          LatLng Punto16 = new LatLng(13.708915, -89.203049);
-         //LatLng Punto17 = new LatLng();
-         //LatLng Punto18 = new LatLng();
-         //LatLng Punto19 = new LatLng();
-         //LatLng Punto20 = new LatLng();
+         LatLng Punto17 = new LatLng(13.705531, -89.196333);
+         LatLng Punto18 = new LatLng(13.703405, -89.196413);
+         LatLng Punto19 = new LatLng(13.701279, -89.196610);
+         LatLng Punto20 = new LatLng(13.699903, -89.196106);
          //LatLng Punto21 = new LatLng();
          //LatLng Punto22 = new LatLng();
          //LatLng Punto23 = new LatLng();
@@ -362,11 +373,7 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         // LatLng Punto30 = new LatLng();
 
 
-
-
-
-
-        mMap.addMarker(new MarkerOptions().position(Punto1).title("Punto de salida ruta 53"));
+            mMap.addMarker(new MarkerOptions().position(Punto1).title("Punto de salida ruta 53").snippet("Primera Salida 5:30 am, Ultima Salida 5:30 pm"));
             mMap.addMarker(new MarkerOptions().position(Punto2).title("Parada Mister Pan"));
             mMap.addMarker(new MarkerOptions().position(Punto3).title("Parada Col San Pedro"));
             mMap.addMarker(new MarkerOptions().position(Punto4).title("Parada Villa Olimpica"));
@@ -382,11 +389,22 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
             mMap.addMarker(new MarkerOptions().position(Punto14).title("Parada Minerva Ues"));
             mMap.addMarker(new MarkerOptions().position(Punto15).title("Parada Hospital Bloom"));
             mMap.addMarker(new MarkerOptions().position(Punto16).title("Parada Club de Leones"));
+            mMap.addMarker(new MarkerOptions().position(Punto17).title("Parada Correos de El salvador"));
+            mMap.addMarker(new MarkerOptions().position(Punto18).title("Parada Banco Agricola Centro de Gobierno"));
+            mMap.addMarker(new MarkerOptions().position(Punto19).title("Parada Motel El OSO"));
+            mMap.addMarker(new MarkerOptions().position(Punto20).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)).title("Parada Final 53"));
 
 
 
 
 
+
+
+
+    }
+
+    public void limpiar(){
+        mMap.clear();
     }
 
 

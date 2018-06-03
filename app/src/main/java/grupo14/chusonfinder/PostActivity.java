@@ -36,22 +36,12 @@ public class PostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
-        mSelectedImage =(ImageButton) findViewById(R.id.imageSelected);
         mPostTitle = (EditText) findViewById(R.id.titleField);
-        mPostDesc = (EditText) findViewById(R.id.descField);
+        mPostDesc  = (EditText) findViewById(R.id.descField);
         mSubmitBtn = (Button) findViewById(R.id.submitBtn);
-        mStorage = FirebaseStorage.getInstance().getReference();
-        mProgress = new ProgressDialog(this);
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Blog");
-        mSelectedImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                galleryIntent.setType("image/*");
-                startActivityForResult(galleryIntent,GALLERY_REQUEST);
-            }
-        });
-
+        mStorage   = FirebaseStorage.getInstance().getReference();
+        mProgress  = new ProgressDialog(this);
+        mDatabase  = FirebaseDatabase.getInstance().getReference().child("Blog");
         mSubmitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,25 +51,17 @@ public class PostActivity extends AppCompatActivity {
     }
 
     private void startPosting() {
-        mProgress.setMessage("Posting to Blog...");
+        mProgress.setMessage("Chuzoneando :v...");
         mProgress.setCancelable(false);
         mProgress.show();
         final String title_val=mPostTitle.getText().toString().trim();
         final String desc_val=mPostDesc.getText().toString().trim();
-        if(!TextUtils.isEmpty(title_val)&& !TextUtils.isEmpty(desc_val)&& mImageUri!=null){
-            final StorageReference filepath= mStorage.child("Blog_Images").child(mImageUri.getLastPathSegment());
-            filepath.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     mProgress.dismiss();
                     DatabaseReference newPost = mDatabase.push();
                     newPost.child("title").setValue(title_val);
                     newPost.child("desc").setValue(desc_val);
-                    newPost.child("image").setValue(mStorage.getDownloadUrl().toString());
                     startActivity(new Intent(PostActivity.this,BlogActivity.class));
-                }
-            });
-        }
+
     }
 
 

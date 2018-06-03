@@ -42,22 +42,20 @@ public class BlogActivity extends AppCompatActivity {
         mBlogList.setHasFixedSize(true);
         mBlogList.setLayoutManager(new LinearLayoutManager(this));
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Blog");
-        options =new FirebaseRecyclerOptions.Builder<Blog>()
-                .setQuery(mDatabase, Blog.class)
-                .build();
+        options =new FirebaseRecyclerOptions.Builder<Blog>().setQuery(mDatabase, Blog.class).build();
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Blog, BlogViewHolder>(options) {
             @Override
             public BlogViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.blog_row, parent, false);
                 return new BlogViewHolder(view);
+
             }
 
             @Override
             protected void onBindViewHolder(BlogViewHolder holder, int position, Blog model) {
                 holder.setTitle(model.getTitle());
                 holder.setDesc(model.getDesc());
-                holder.setImage(getApplicationContext(),model.getImage());
             }
         };
         mBlogList.setAdapter(firebaseRecyclerAdapter);
@@ -86,10 +84,7 @@ public class BlogActivity extends AppCompatActivity {
             TextView post_desc = (TextView) mView.findViewById(R.id.post_desc);
             post_desc.setText(desc);
         }
-        public void setImage(Context ctx, String image){
-            ImageView post_image= (ImageView) mView.findViewById(R.id.post_image);
-            Picasso.with(ctx).load(image).resize(50,50).centerCrop().into(post_image);
-        }
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

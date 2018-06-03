@@ -9,10 +9,10 @@
             android:id="@+id/Blog"
             android:title="Blog Chuzon" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/seguras"
             android:title="Paradas Seguras" />
         <item
-            android:id="@+id/nav_nos"
+            android:id="@+id/inseguras"
             android:title="Paradas no Seguras"
             />
         <item
@@ -28,6 +28,28 @@
             android:title="Ruta 44"
             />
     </group>
+
+    <item android:title="Opciones de Mapa">
+        <menu>
+
+            <item
+                android:id="@+id/Trafico"
+                android:title="Mapa con trafico"
+                />
+            <item
+                android:id="@+id/Satilital"
+                android:title="Mapa Satelital"
+                />
+            <item
+                android:id="@+id/Hybrido"
+                android:title="Mapa Hybrido"
+                />
+            <item
+                android:id="@+id/Normal"
+                android:title="Mapa Normal"
+                />
+        </menu>
+    </item>
 
     <item android:title="Opciones de Cuenta">
         <menu>
