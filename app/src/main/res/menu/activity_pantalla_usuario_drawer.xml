@@ -16,16 +16,16 @@
             android:title="Paradas no Seguras"
             />
         <item
-            android:id="@+id/desrto"
-            android:title="Prueba1"
+            android:id="@+id/Route53"
+            android:title="Ruta 53"
             />
         <item
-            android:id="@+id/local"
-            android:title="prueba2"
+            android:id="@+id/Route1"
+            android:title="Ruta 1"
             />
         <item
-            android:id="@+id/marshall"
-            android:title="Prueba 3"
+            android:id="@+id/Route44"
+            android:title="Ruta 44"
             />
     </group>
 

@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.ClipData;
 
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Marker;
@@ -80,6 +81,7 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
 ////////////////////???????????EL SETEADOR DEL MAP EN LA LAYOUT//////////////////////////////////////////
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -252,11 +254,10 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
+
         buildGoogleApiClient();
-      //  mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mMap.setMyLocationEnabled(true);
-
-
+        mMap.getUiSettings().setZoomControlsEnabled(true);
 
     }
 
@@ -267,8 +268,8 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
                 .build();
-
         nGoogleApiClient.connect();
+
     }
 
     @Override
@@ -277,7 +278,7 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
         //mMap.setTrafficEnabled(true);
        // mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(18));
+        //mMap.animateCamera(CameraUpdateFactory.zoomTo(30));
 
     }
 
@@ -322,12 +323,14 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
 
 
     public  void onClick(){
-
         Intent intent = new Intent(PantallaUsuarioActivity.this, DatosPersonalesActivity.class);
         startActivity(intent);
+    }
+/////////////////////////////////////////////////////// ASIGANANDO RUTAS/////////////////////////////////////////////////////
+    public void ruta53(){
+
 
     }
-
 
 
 
