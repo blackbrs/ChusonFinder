@@ -342,10 +342,31 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
          LatLng Punto10 = new LatLng(13.721014, -89.204031);
          LatLng Punto11 = new LatLng(13.718630, -89.205911);
          LatLng Punto12 = new LatLng(13.715667, -89.210503);
+         LatLng Punto13 = new LatLng(13.714928, -89.205602);
+         LatLng Punto14 = new LatLng(13.715220, -89.204379);
+         LatLng Punto15 = new LatLng(13.714001, -89.203585);
+         LatLng Punto16 = new LatLng(13.708915, -89.203049);
+         //LatLng Punto17 = new LatLng();
+         //LatLng Punto18 = new LatLng();
+         //LatLng Punto19 = new LatLng();
+         //LatLng Punto20 = new LatLng();
+         //LatLng Punto21 = new LatLng();
+         //LatLng Punto22 = new LatLng();
+         //LatLng Punto23 = new LatLng();
+         //LatLng Punto24 = new LatLng();
+         //LatLng Punto25 = new LatLng();
+         //LatLng Punto26 = new LatLng();
+         //LatLng Punto27 = new LatLng();
+         //LatLng Punto28 = new LatLng();
+         //LatLng Punto29 = new LatLng();
+        // LatLng Punto30 = new LatLng();
 
 
 
-            mMap.addMarker(new MarkerOptions().position(Punto1).title("Punto de salida ruta 53"));
+
+
+
+        mMap.addMarker(new MarkerOptions().position(Punto1).title("Punto de salida ruta 53"));
             mMap.addMarker(new MarkerOptions().position(Punto2).title("Parada Mister Pan"));
             mMap.addMarker(new MarkerOptions().position(Punto3).title("Parada Col San Pedro"));
             mMap.addMarker(new MarkerOptions().position(Punto4).title("Parada Villa Olimpica"));
@@ -357,6 +378,10 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
             mMap.addMarker(new MarkerOptions().position(Punto10).title("Parada Polideportivo UES"));
             mMap.addMarker(new MarkerOptions().position(Punto11).title("Parada Oficinas Anda"));
             mMap.addMarker(new MarkerOptions().position(Punto12).title("Parada Colegio Cristobsl Colon"));
+            mMap.addMarker(new MarkerOptions().position(Punto13).title("Parada INAC"));
+            mMap.addMarker(new MarkerOptions().position(Punto14).title("Parada Minerva Ues"));
+            mMap.addMarker(new MarkerOptions().position(Punto15).title("Parada Hospital Bloom"));
+            mMap.addMarker(new MarkerOptions().position(Punto16).title("Parada Club de Leones"));
 
 
 
