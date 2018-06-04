@@ -15,6 +15,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Path;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Looper;
@@ -72,6 +76,9 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
     private List<Marker> destinationMarkers = new ArrayList<>();
     private List<Polyline> polylinePaths = new ArrayList<>();
     private ProgressDialog progressDialog;
+    SensorManager sensorManager;
+    Sensor sensor;
+    SensorEventListener sensorEventListener;
 
     /////////////////////////////////////////////////////////////////////////////////
     @Override
@@ -81,22 +88,44 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
 ////////////////////???????????EL SETEADOR DEL MAP EN LA LAYOUT//////////////////////////////////////////
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+//----------------------------------------SENSOR EVENT PARA LIMPIAR EL MAPA----------------------------------------
 
+        sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        if(sensor == null){ finish(); }
 
+        sensorEventListener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent sensorEvent) {
+                float y = sensorEvent.values[1];
+                if(y<-5){
+                    limpiar();
+                    mMap.setTrafficEnabled(false);
+
+                    onResume();
+                }//else if(y>5){//}
+
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int i) {
+
+            }
+        };
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Mapa Limpio", Snackbar.LENGTH_LONG);
-                limpiar();
-                mMap.setTrafficEnabled(false);
-            }
-        });
+      //  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        //fab.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+          //  public void onClick(View view) {
+          //      Snackbar.make(view, "Mapa Limpio", Snackbar.LENGTH_LONG);
+            //    limpiar();
+              //  mMap.setTrafficEnabled(false);
+           // }
+        //});
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -407,7 +436,23 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         mMap.clear();
     }
 
-
-
-
+//------------------------------------- metodos sensor------------------------------------------------
+private void start(){
+    sensorManager.registerListener(sensorEventListener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
 }
+    private void stop(){ }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        start();
+        super.onResume();
+    }
+}
+
+
+
