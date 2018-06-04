@@ -254,9 +254,8 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         if (id == R.id.Blog) {
             Intent intent = new Intent(PantallaUsuarioActivity.this, BlogActivity.class);
             startActivity(intent);
-
-        } else if (id == R.id.seguras) {
         } else if (id == R.id.inseguras) {
+            rutasinSeguras();
         } else if (id == R.id.Route53) {
            ruta53();
         } else if (id == R.id.Route1) {
@@ -284,7 +283,7 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
 
 /////////////////////////////////////// FUNCIONES DE GOOGLE MAPS///////////////////////////////////////////////
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(final GoogleMap googleMap) {
         mMap = googleMap;
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
@@ -293,6 +292,13 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         buildGoogleApiClient();
         mMap.setMyLocationEnabled(true);
         mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                googleMap.addMarker(new MarkerOptions().position(latLng).title("Quiero ir").snippet(":)"));
+
+            }
+        });
 
     }
 
@@ -550,6 +556,21 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
 
 
 
+    }
+
+    public void rutasinSeguras(){
+        LatLng Punto1 = new LatLng(13.738486, -89.213017);
+        LatLng Punto2 = new LatLng(13.751131, -89.203926);
+        LatLng Punto7 = new LatLng(13.729888, -89.202331);
+        LatLng Punto17 = new LatLng(13.715577, -89.192604);
+        LatLng Punto18 = new LatLng(13.710154, -89.190408);
+        LatLng Punto19 = new LatLng(13.708403, -89.190553);
+        mMap.addMarker(new MarkerOptions().position(Punto1).title("Ruta 1").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mMap.addMarker(new MarkerOptions().position(Punto2).title("Punto de salida ruta 44").snippet("Primera Salida 4 am, Ultima Salida 8 pm").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mMap.addMarker(new MarkerOptions().position(Punto7).title("Parada Los 400").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mMap.addMarker(new MarkerOptions().position(Punto17).title("Parada la Luz del mundo").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mMap.addMarker(new MarkerOptions().position(Punto18).title("Parada Maria Auxiliadora").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mMap.addMarker(new MarkerOptions().position(Punto19).title("Parada San Miguelito").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
     }
 
     public void limpiar(){

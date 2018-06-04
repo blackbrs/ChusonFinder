@@ -8,9 +8,7 @@
         <item
             android:id="@+id/Blog"
             android:title="Blog Chuzon" />
-        <item
-            android:id="@+id/seguras"
-            android:title="Paradas Seguras" />
+
         <item
             android:id="@+id/inseguras"
             android:title="Paradas no Seguras"
