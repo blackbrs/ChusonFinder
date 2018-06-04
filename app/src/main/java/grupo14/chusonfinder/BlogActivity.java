@@ -18,10 +18,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.facebook.login.LoginManager;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -96,7 +98,22 @@ public class BlogActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()== R.id.action_add){
         startActivity(new Intent(BlogActivity.this,PostActivity.class));
+        }else if(item.getItemId()== R.id.action_settings){
+            Logout();
+
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goMainScreen(){
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
+    public void Logout(){
+        LoginManager.getInstance().logOut();
+        FirebaseAuth.getInstance().signOut();
+        goMainScreen();
     }
 }

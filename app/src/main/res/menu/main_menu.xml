@@ -9,6 +9,6 @@
         app:showAsAction="always" />
     <item
         android:id="@id/action_settings"
-        android:title="Settings"
+        android:title="Cerrar sesion"
         app:showAsAction="never"/>
 </menu>
