@@ -269,6 +269,7 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         } else if (id == R.id.Route53) {
            ruta53();
         } else if (id == R.id.Route1) {
+            ruta1();
         } else if (id == R.id.Route44) {
         } else if (id == R.id.Trafico) {
             mMap.setTrafficEnabled(true);
@@ -422,11 +423,64 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
             mMap.addMarker(new MarkerOptions().position(Punto18).title("Parada Banco Agricola Centro de Gobierno"));
             mMap.addMarker(new MarkerOptions().position(Punto19).title("Parada Motel El OSO"));
             mMap.addMarker(new MarkerOptions().position(Punto20).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)).title("Parada Final 53"));
+    }
+
+    public void ruta1(){
+        LatLng Punto1 = new LatLng(13.738544, -89.213012);
+        LatLng Punto2 = new LatLng(13.737085, -89.210739);
+        LatLng Punto3 = new LatLng(13.736315, -89.208089);
+        LatLng Punto4 = new LatLng(13.736570, -89.204427);
+        LatLng Punto5 = new LatLng(13.736268, -89.203236);
+        LatLng Punto6 = new LatLng(13.733548, -89.202681);
+        LatLng Punto7 = new LatLng(13.729888, -89.202331);
+        LatLng Punto8 = new LatLng(13.727199, -89.202158);
+        LatLng Punto9 = new LatLng(13.721050, -89.204014);
+        LatLng Punto10 = new LatLng(13.718640, -89.205926);
+        LatLng Punto11 = new LatLng(13.718640, -89.205926);
+        LatLng Punto12 = new LatLng(13.715604, -89.210535);
+        LatLng Punto13 = new LatLng(13.714946, -89.205657);
+        LatLng Punto14 = new LatLng(13.715308, -89.204262);
+        LatLng Punto15 = new LatLng(13.715601, -89.202780);
+        LatLng Punto16 = new LatLng(13.716120, -89.200745);
+        LatLng Punto17 = new LatLng(13.715577, -89.192604);
+        LatLng Punto18 = new LatLng(13.710154, -89.190408);
+        LatLng Punto19 = new LatLng(13.708403, -89.190553);
+        LatLng Punto20 = new LatLng(13.695561, -89.191844);
+        LatLng Punto21 = new LatLng(13.695561, -89.191844);
+        LatLng Punto22 = new LatLng(13.690328, -89.189216);
+        LatLng Punto23 = new LatLng(13.689150, -89.187102);
+        //LatLng Punto24 = new LatLng();
+        //LatLng Punto25 = new LatLng();
+        //LatLng Punto26 = new LatLng();
+        //LatLng Punto27 = new LatLng();
+        //LatLng Punto28 = new LatLng();
+        //LatLng Punto29 = new LatLng();
+        // LatLng Punto30 = new LatLng();
 
 
-
-
-
+        mMap.addMarker(new MarkerOptions().position(Punto1).title("Punto de salida ruta 1").snippet("Primera Salida 4 am, Ultima Salida 8 pm"));
+        mMap.addMarker(new MarkerOptions().position(Punto2).title("Parada villa olimpica").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto3).title("Parada El Bambu").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto4).title("Parada Caes").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto5).title("Parada Ayutuxtepeque").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto6).title("Parada la comunidad").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto7).title("Parada Los 400").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto8).title("Parada Centro comercial Zacamil").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto9).title("Parada Polideportivo UES").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto10).title("Parada Anda").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto11).title("Parada Economia UES").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto12).title("Parada Cristobal colon").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto13).title("Parada INAC").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto14).title("Parada Minerva").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto15).title("Parada Dollar city").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto16).title("Parada Autopista Norte").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto17).title("Parada la Luz del mundo").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto18).title("Parada Maria Auxiliadora").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto19).title("Parada San Miguelito").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto20).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)).title("Punto de control ruta 1"));
+        mMap.addMarker(new MarkerOptions().position(Punto21).title("Parada el castillo").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto22).title("Parada Distrito 5").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
+        mMap.addMarker(new MarkerOptions().position(Punto23).title("Parada Instituto nacional de comercio").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)).snippet("Parada para retorno"));
 
 
 

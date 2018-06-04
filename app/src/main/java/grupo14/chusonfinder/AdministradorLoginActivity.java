@@ -36,7 +36,7 @@ public class AdministradorLoginActivity extends AppCompatActivity {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                 if(user!=null){
-                    Intent intent = new Intent(AdministradorLoginActivity.this,AdminMenuActivity.class);
+                    Intent intent = new Intent(AdministradorLoginActivity.this,BlogActivity.class);
                     startActivity(intent);
                     finish();
                     return;
