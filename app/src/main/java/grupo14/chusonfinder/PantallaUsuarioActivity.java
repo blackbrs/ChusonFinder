@@ -117,15 +117,6 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-      //  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        //fab.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-          //  public void onClick(View view) {
-          //      Snackbar.make(view, "Mapa Limpio", Snackbar.LENGTH_LONG);
-            //    limpiar();
-              //  mMap.setTrafficEnabled(false);
-           // }
-        //});
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -271,6 +262,7 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         } else if (id == R.id.Route1) {
             ruta1();
         } else if (id == R.id.Route44) {
+            ruta44();
         } else if (id == R.id.Trafico) {
             mMap.setTrafficEnabled(true);
         } else if (id == R.id.Satilital) {
@@ -391,17 +383,6 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
          LatLng Punto18 = new LatLng(13.703405, -89.196413);
          LatLng Punto19 = new LatLng(13.701279, -89.196610);
          LatLng Punto20 = new LatLng(13.699903, -89.196106);
-         //LatLng Punto21 = new LatLng();
-         //LatLng Punto22 = new LatLng();
-         //LatLng Punto23 = new LatLng();
-         //LatLng Punto24 = new LatLng();
-         //LatLng Punto25 = new LatLng();
-         //LatLng Punto26 = new LatLng();
-         //LatLng Punto27 = new LatLng();
-         //LatLng Punto28 = new LatLng();
-         //LatLng Punto29 = new LatLng();
-        // LatLng Punto30 = new LatLng();
-
 
             mMap.addMarker(new MarkerOptions().position(Punto1).title("Punto de salida ruta 53").snippet("Primera Salida 5:30 am, Ultima Salida 5:30 pm"));
             mMap.addMarker(new MarkerOptions().position(Punto2).title("Parada Mister Pan"));
@@ -481,6 +462,91 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
         mMap.addMarker(new MarkerOptions().position(Punto21).title("Parada el castillo").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
         mMap.addMarker(new MarkerOptions().position(Punto22).title("Parada Distrito 5").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
         mMap.addMarker(new MarkerOptions().position(Punto23).title("Parada Instituto nacional de comercio").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)).snippet("Parada para retorno"));
+
+
+
+    }
+
+    public void ruta44(){
+        LatLng Punto1 = new LatLng(13.751131, -89.203926);
+        LatLng Punto2 = new LatLng(13.749097, -89.204511);
+        LatLng Puntod = new LatLng(13.739837, -89.202555);
+        LatLng Punto3 = new LatLng(13.738279, -89.203687);
+        LatLng Punto4 = new LatLng(13.736657, -89.203437);
+        LatLng Punto5 = new LatLng(13.736268, -89.203236);
+        LatLng Punto6 = new LatLng(13.733548, -89.202681);
+        LatLng Punto7 = new LatLng(13.729888, -89.202331);
+        LatLng Punto8 = new LatLng(13.727199, -89.202158);
+        LatLng Punto9 = new LatLng(13.721050, -89.204014);
+        LatLng Punto10 = new LatLng(13.718640, -89.205926);
+        LatLng Punto11 = new LatLng(13.718640, -89.205926);
+        LatLng Punto12 = new LatLng(13.715604, -89.210535);
+        LatLng Punto13 = new LatLng(13.714946, -89.205657);
+        LatLng Punto14 = new LatLng(13.715308, -89.204262);
+        LatLng Punto15 = new LatLng(13.714250, -89.204784);
+        LatLng Punto16 = new LatLng(13.711846, -89.206834);
+        LatLng Punto17 = new LatLng(13.709137, -89.210176);
+        LatLng Punto18 = new LatLng(13.705744, -89.214802);
+        LatLng Punto19 = new LatLng(13.698044, -89.216567);
+        LatLng Punto20 = new LatLng(13.691962, -89.217103);
+        LatLng Punto21 = new LatLng(13.688865, -89.217578);
+        LatLng Punto22 = new LatLng(13.686374, -89.217786);
+        LatLng Punto23 = new LatLng(13.684407, -89.221843);
+        LatLng Punto24 = new LatLng(13.683941, -89.223855);
+        LatLng Punto25 = new LatLng(13.683234, -89.229204);
+        LatLng Punto26 = new LatLng(13.683574, -89.234665);
+        LatLng Punto27 = new LatLng(13.682722, -89.237508);
+        LatLng Punto28 = new LatLng(13.678292, -89.238456);
+        LatLng Punto29 = new LatLng(13.675331, -89.239282);
+        LatLng Punto30 = new LatLng(13.673703, -89.241749);
+        LatLng Punto31 = new LatLng(13.671628, -89.238809);
+        LatLng Punto32 = new LatLng(13.666459, -89.238940);
+        LatLng Punto33 = new LatLng(13.662583, -89.249843);
+        LatLng Punto34 = new LatLng(13.661869, -89.254989);
+        LatLng Punto35 = new LatLng(13.662938, -89.258851);
+        LatLng Punto36 = new LatLng(13.666709, -89.266261);
+        LatLng Punto37 = new LatLng(13.671220, -89.254700);
+        LatLng Punto38 = new LatLng(13.673658, -89.253341);
+
+        mMap.addMarker(new MarkerOptions().position(Punto1).title("Punto de salida ruta 44").snippet("Primera Salida 4 am, Ultima Salida 8 pm"));
+        mMap.addMarker(new MarkerOptions().position(Punto2).title("Parada Redondel Santisima trinidad").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Puntod).title("Parada Arco Santisima trinidad").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto3).title("Parada Calle Dinamarca").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto4).title("Parada PNC ayutuxtepeuqe").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto5).title("Parada Ayutuxtepeque").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto6).title("Parada la comunidad").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto7).title("Parada Los 400").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto8).title("Parada Centro comercial Zacamil").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto9).title("Parada Polideportivo UES").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto10).title("Parada Anda").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto11).title("Parada Economia UES").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto12).title("Parada Cristobal colon").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto13).title("Parada INAC").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto14).title("Parada Minerva").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto15).title("Parada Cairos").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto16).title("Parada Las pulgas ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto17).title("Parada Pizza hut los Heroses").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto18).title("Parada Metrosur").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto19).title("Parada Estadio Magico GOnzales").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto20).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)).title(""));
+        mMap.addMarker(new MarkerOptions().position(Punto21).title("Parada Terminal de Occidente").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto22).title("Parada 49Av ").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto23).title("Parada Estadio").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto24).title("Arbol de la paz").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto25).title("Cebollines los proceres").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto26).title("Parada UCA").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto27).title("Parada Casino SIESTA").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto28).title("Parada Peatonal").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto29).title("Parada Palo de Hule").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto30).title("Parada Parque antiguo cuscatlan").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto31).title("Parada Calle oriente").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto32).title("Parada APA").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto33).title("Parada Pricemart Santa Elena").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto34).title("Parada Holcin").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto35).title("Parada Redondel Orden De Malta").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto36).title("Parada Montelena").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto37).title("Parada Holiday INN").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(Punto38).title("Parada AUTO HOTEL MAJESTIC").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
 
 
