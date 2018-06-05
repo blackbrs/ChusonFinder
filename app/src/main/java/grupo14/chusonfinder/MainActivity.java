@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,UsuarioLoginActivity.class);
                 startActivity(intent);
+                Sound();
                 finish();
                 return;
 
@@ -76,8 +78,9 @@ public class MainActivity extends AppCompatActivity {
     private void start(){
         sensorManager.registerListener(sensorEventListener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
     }
-private void stop(){
-
+private void Sound() {
+    MediaPlayer mediaPlayer =  MediaPlayer.create(this, R.raw.exito);
+    mediaPlayer.start();
 }
 
     @Override
