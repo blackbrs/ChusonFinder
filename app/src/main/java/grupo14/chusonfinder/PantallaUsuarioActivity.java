@@ -102,7 +102,7 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
                     limpiar();
                     mMap.setTrafficEnabled(false);
 
-                    onResume();
+                 onResume();
                 }//else if(y>5){//}
 
             }
