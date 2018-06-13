@@ -37,13 +37,36 @@
 
     <Button
         android:id="@+id/submitBtn"
-        android:layout_width="383dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/descField"
         android:layout_below="@+id/descField"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="31dp"
         android:background="@color/colorPrimary"
         android:text="Enviar Post"
         android:textColor="@color/cardview_light_background" />
+
+    <Button
+        android:id="@+id/txtspchBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/spchBtn"
+        android:layout_alignBottom="@+id/spchBtn"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:text="Text to speech"
+        android:textColor="@color/cardview_light_background" />
+
+    <Button
+        android:id="@+id/spchBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/submitBtn"
+        android:layout_alignBottom="@+id/submitBtn"
+        android:layout_alignEnd="@+id/descField"
+        android:background="@color/colorPrimary"
+        android:text="Speech"
+        android:textColor="@color/cardview_light_background" />
+
+
 </RelativeLayout>
