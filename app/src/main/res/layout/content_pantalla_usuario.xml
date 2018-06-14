@@ -5,56 +5,59 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingTop="60dp">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="60dp"
+    android:orientation="vertical">
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:id="@+id/etOrigin"
-        android:hint="Ingrese su ubicacion" />
+        android:hint=" Ingrese su ubicacion"
+        android:background="@drawable/input_outline" />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="Ingrese su lugar de destino"
-        android:id="@+id/etDestination" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:hint=" Ingrese su lugar de destino"
+        android:id="@+id/etDestination"
+        android:background="@drawable/input_outline"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="10dp"
         >
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="3dp"
             android:text="Buscar Camino"
-            android:id="@+id/btnFindPath" />
-        <ImageView
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-         />
+            android:id="@+id/btnFindPath"
+            android:background="@drawable/input_outline"
+            android:backgroundTint="@color/yellow"/>
+
         <TextView
             android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
             android:text="0 km"
             android:id="@+id/tvDistance" />
 
-        <ImageView
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:padding="5dp"
-         />
+
         <TextView
             android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
             android:text="0 min"
             android:id="@+id/tvDuration" />
     </LinearLayout>
@@ -65,7 +68,7 @@
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:showIn="@layout/app_bar_pantalla_usuario">
         <!--tools:context="grupo14.chusonfinder.PantallaUsuarioActivity"-->
