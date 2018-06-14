@@ -4,10 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="150dp"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="grupo14.chusonfinder.UsuarioLoginActivity">
+    tools:context="grupo14.chusonfinder.UsuarioLoginActivity"
+    android:theme="@style/AppTheme">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        app:srcCompat="@mipmap/logo"
+        android:layout_marginTop="75dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textAlignment="center"/>
 
     <EditText
         android:id="@+id/editCorreo"
@@ -15,27 +28,36 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Correo Electronico"/>
+        android:hint=" Correo Electronico"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/input_outline"/>
     <EditText
         android:id="@+id/editContra"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="Contraseña"/>
+        android:hint=" Contraseña"
+        android:background="@drawable/input_outline"
+        android:layout_marginTop="10dp"/>
 
     <Button
-        android:paddingTop="10dp"
         android:id="@+id/login"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:backgroundTint="@color/yellow"
+        android:layout_marginTop="20dp"
+        android:text="Login"
+        android:background="@drawable/input_outline"/>
+
     <Button
-        android:paddingTop="10dp"
         android:id="@+id/Regis"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Registrarse" />
+        android:layout_marginTop="10dp"
+        android:text="Registrarse"
+        android:background="@drawable/input_outline"
+        android:backgroundTint="@color/cyan"/>
 
 
     <com.facebook.login.widget.LoginButton
