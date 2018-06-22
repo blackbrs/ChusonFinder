@@ -99,10 +99,12 @@ public class PantallaUsuarioActivity extends AppCompatActivity implements Naviga
             public void onSensorChanged(SensorEvent sensorEvent) {
                 float y = sensorEvent.values[1];
                 if(y<-5){
+
                     limpiar();
                     mMap.setTrafficEnabled(false);
+                    start();
+                  //  onResume();
 
-                 onResume();
                 }//else if(y>5){//}
 
             }
@@ -590,8 +592,9 @@ private void start(){
 
     @Override
     protected void onResume() {
-        start();
         super.onResume();
+        start();
+
     }
 }
 

@@ -1,5 +1,6 @@
 package grupo14.chusonfinder;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
         administrador = (Button)findViewById(R.id.admin);
         user = (Button)findViewById(R.id.usuario);
@@ -37,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
                 if(x<-5){
                         accion++;
                         administrador.setVisibility(View.VISIBLE);
-                        onResume();
+                    start();
+                       // onResume();
                 }else if(x>5){
                         accion++;
                     administrador.setVisibility(View.INVISIBLE);
@@ -88,9 +91,11 @@ private void Sound() {
         super.onPause();
     }
 
+
     @Override
     protected void onResume() {
-        start();
         super.onResume();
+        start();
+
     }
 }
