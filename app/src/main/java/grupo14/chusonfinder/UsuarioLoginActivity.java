@@ -111,27 +111,7 @@ public class UsuarioLoginActivity extends AppCompatActivity {
 
             }
         });
-///////////////////////////////////////////////// INICIO DE SESION DE FACEBOOK/////////////////////////////////////////////////////////////////////////////////
-        callbackManager = CallbackManager.Factory.create();
-        loginButton = (LoginButton)findViewById(R.id.login_button);
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                //goMainScreen();
-                handleFacebookAccesToken(loginResult.getAccessToken());
-            }
 
-            @Override
-            public void onCancel() {
-                Toast.makeText(getApplicationContext(), R.string.cancel_login, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                Toast.makeText(getApplicationContext(),R.string.error_login,Toast.LENGTH_SHORT).show();
-
-            }
-        });
     }
 
     private void handleFacebookAccesToken(AccessToken accessToken) {
