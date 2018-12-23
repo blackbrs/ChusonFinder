@@ -27,10 +27,30 @@
 
     <ImageView
         android:id="@+id/imageView3"
+        android:layout_width="248dp"
+        android:layout_height="128dp"
+        android:layout_alignEnd="@+id/usuario"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="-61dp"
+        app:srcCompat="@mipmap/logo" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="171dp"
+        android:layout_height="132dp"
+        android:layout_alignEnd="@+id/usuario"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="-9dp"
+        app:srcCompat="@mipmap/ues" />
+
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="77dp"
-        app:srcCompat="@mipmap/logo" />
+        android:layout_marginBottom="21dp"
+        android:text=" PDM - 2018 CA14080" />
 </RelativeLayout>
